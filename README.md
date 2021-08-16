@@ -1,12 +1,11 @@
-# Postgraduation discipline: DM110
-======
+## Discipline Final Work: Rest API - **_Partner_**, with **_Auditing Message Service_**
 
-## Final work: Rest API - **Partner**, with **Auditing Message Service**
+#### DM110 - JavaEE Development
 
-### Group:
+#### Group:
 * Felipe Rocha
-* [Higor Silvério] (https://github.com/rrocharoberto)
+* [Higor Silvério](https://github.com/rrocharoberto)
 * Monique Souza
 
-### Teacher advisor:
-* [Roberto Rocha] (https://github.com/rrocharoberto)
+#### Orientation:
+* [Roberto Rocha](https://github.com/rrocharoberto)
