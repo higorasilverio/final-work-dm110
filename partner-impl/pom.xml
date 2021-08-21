@@ -4,7 +4,7 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
  
-  <name>Final Work DM 110 - Rest Impl</name>
+  <name>DM 110 Final Work - Rest Impl</name>
   <description>Rest Implementation DM 110 Project</description>
   <properties></properties>
   <parent>

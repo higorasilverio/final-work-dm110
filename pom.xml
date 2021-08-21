@@ -4,7 +4,7 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
  
-  <name>Final Work DM 110 Parent</name>
+  <name>DM 110 Final Work - Parent</name>
   <description>DM 110 JEE Agregator</description>
 
   <groupId>br.inatel.dm110</groupId>
