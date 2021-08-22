@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                
-    
-    
-    <wb-module deploy-name="dm110-ear-1.0">
                                 
+    
+    
+    
+    
+    
+    
+    <wb-module deploy-name="partner-ear-1.0">
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="partner-api-1.0.jar" deploy-path="/lib" handle="module:/resource/dm110-api/dm110-api">
+        <dependent-module archiveName="partner-api-1.0.jar" deploy-path="/lib" handle="module:/resource/partner-api/partner-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="partner-impl-1.0.jar" deploy-path="/lib" handle="module:/resource/dm110-impl/dm110-impl">
+        <dependent-module archiveName="partner-impl-1.0.jar" deploy-path="/lib" handle="module:/resource/partner-impl/partner-impl">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="partner-web-1.0.war" deploy-path="/" handle="module:/resource/dm110-web/dm110-web">
+        <dependent-module archiveName="partner-web-1.0.war" deploy-path="/" handle="module:/resource/partner-web/partner-web">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="partner-ejb-1.0.jar" deploy-path="/" handle="module:/resource/dm110-ejb/dm110-ejb">
+        <dependent-module archiveName="partner-ejb-1.0.jar" deploy-path="/" handle="module:/resource/partner-ejb/partner-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-                            
+                                                            
+    
+    
+    
+    
     
     
     </wb-module>
-            
+                            
+
+
+
+
 
 
 </project-modules>
