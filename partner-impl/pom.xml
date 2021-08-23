@@ -1,31 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
- 
-  <name>Final Work DM 110 - Rest Impl</name>
-  <description>Rest Implementation DM 110 Project</description>
-  <properties></properties>
-  <parent>
-    <groupId>br.inatel.dm110</groupId>
-    <artifactId>partner-parent</artifactId>
-    <version>1.0</version>
-  </parent>
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>br.inatel.dm110</groupId>
-  <artifactId>partner-impl</artifactId>
-  <packaging>jar</packaging>
-  <dependencies>
-	<dependency>
-		  <groupId>br.inatel.dm110</groupId>
-		  <artifactId>partner-api</artifactId>
-		  <type>jar</type>
-	</dependency>
+	<name>Partner - DM 110 Rest Impl</name>
+	<description>Partner - DM 110 JEE Rest Implementation Project</description>
+	<properties></properties>
+	<parent>
+		<groupId>br.inatel.dm110.base</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+	</parent>
 
-	<dependency>
-		<groupId>javax</groupId>
-		<artifactId>javaee-api</artifactId>
-	</dependency>
-  </dependencies>
+	<groupId>br.inatel.dm110</groupId>
+	<artifactId>partner-impl</artifactId>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>br.inatel.dm110</groupId>
+			<artifactId>partner-api</artifactId>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+	</dependencies>
 </project>
