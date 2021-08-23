@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                                
+                            
     
     
     
     
     
-    
-    <wb-module deploy-name="partner-ear-1.0">
-                                                                
-        
+    <wb-module deploy-name="dm110-ear-1.0">
+                                                        
         
         
         
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
-                                                                
-        
+                                                        
         
         
         
         
         
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="partner-api-1.0.jar" deploy-path="/lib" handle="module:/resource/partner-api/partner-api">
+        <dependent-module archiveName="dm110-api-1.0.jar" deploy-path="/lib" handle="module:/resource/dm110-api/dm110-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="partner-impl-1.0.jar" deploy-path="/lib" handle="module:/resource/partner-impl/partner-impl">
+        <dependent-module archiveName="dm110-impl-1.0.jar" deploy-path="/lib" handle="module:/resource/dm110-impl/dm110-impl">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="partner-web-1.0.war" deploy-path="/" handle="module:/resource/partner-web/partner-web">
+        <dependent-module archiveName="dm110-mdb-1.0.jar" deploy-path="/" handle="module:/resource/dm110-mdb/dm110-mdb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="partner-ejb-1.0.jar" deploy-path="/" handle="module:/resource/partner-ejb/partner-ejb">
+        <dependent-module archiveName="dm110-web-1.0.war" deploy-path="/" handle="module:/resource/dm110-web/dm110-web">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-                                                            
-    
+        <dependent-module archiveName="dm110-ejb-1.0.jar" deploy-path="/" handle="module:/resource/dm110-ejb/dm110-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="modelmapper-2.4.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/modelmapper/modelmapper/2.4.2/modelmapper-2.4.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                                                    
     
     
     
     
     
     </wb-module>
-                            
-
+                        
 
 
 

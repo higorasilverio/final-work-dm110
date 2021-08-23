@@ -1,54 +1,56 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
- 
-  <name>DM 110 Final Work - Web</name>
-  <description>Web DM 110 Project</description>
-  <properties></properties>
-  <parent>
-    <groupId>br.inatel.dm110</groupId>
-    <artifactId>partner-parent</artifactId>
-    <version>1.0</version>
-  </parent>
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>br.inatel.dm110</groupId>
-  <artifactId>partner-web</artifactId>
-  <packaging>war</packaging>
+	<name>Partner - DM 110 Web</name>
+	<description>Partner - DM 110 JEE Web Project</description>
+	<properties></properties>
+	<parent>
+		<groupId>br.inatel.dm110.base</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+	</parent>
 
-<build>
-  <plugins>
-	<plugin>
-		<artifactId>maven-war-plugin</artifactId>
-		<version>3.3.1</version>
-		<configuration>
-			<failOnMissingWebXml>false</failOnMissingWebXml>
-		</configuration>
-	</plugin>
-  </plugins>
-</build>
+	<groupId>br.inatel.dm110</groupId>
+	<artifactId>partner-web</artifactId>
+	<packaging>war</packaging>
 
-  <dependencies>
-	<dependency>
-		  <groupId>br.inatel.dm110</groupId>
-		  <artifactId>partner-impl</artifactId>
-		  <type>jar</type>
-	</dependency>
-	<dependency>
-		  <groupId>br.inatel.dm110</groupId>
-		  <artifactId>partner-api</artifactId>
-		  <type>jar</type>
-		  <scope>provided</scope>
-	</dependency>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-	</dependency>
+	<dependencies>
+		<dependency>
+			<groupId>br.inatel.dm110</groupId>
+			<artifactId>partner-impl</artifactId>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>br.inatel.dm110</groupId>
+			<artifactId>partner-api</artifactId>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 		</dependency>
-  </dependencies>
+	</dependencies>
 </project>

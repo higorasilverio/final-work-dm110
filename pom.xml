@@ -4,11 +4,11 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
  
-  <name>DM 110 Final Work - Parent</name>
-  <description>DM 110 JEE Agregator</description>
+  <name>Partner - DM 110 Parent</name>
+  <description>Partner - DM 110 JEE Agregator</description>
 
-  <groupId>br.inatel.dm110</groupId>
-  <artifactId>partner-parent</artifactId>
+  <groupId>br.inatel.dm110.base</groupId>
+  <artifactId>parent</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
 
@@ -22,89 +22,121 @@
     <module>partner-app-client</module>
     <module>partner-web</module>
     <module>partner-api</module>
-    <module>partner-impl</module>
+    <module>partner-impl</module>  
+    <module>partner-mdb</module>
   </modules>
 
   <build>
-	<plugins>
-	  <plugin>
-		    <artifactId>maven-compiler-plugin</artifactId>
-		    <version>3.2</version>
-		    <configuration>
-		        <source>1.8</source>
-		        <target>1.8</target>
-		    </configuration>
-		</plugin>
-	</plugins>
+		<plugins>
+			<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+					</configuration>
+			</plugin>
+		</plugins>
   </build>
 
   <dependencyManagement>
     <dependencies>
-		<dependency>
-			  <groupId>br.inatel.dm110</groupId>
-			  <artifactId>partner-web</artifactId>
-			  <version>1.0</version>
-			  <type>war</type>
-		</dependency>
-		<dependency>
-			  <groupId>br.inatel.dm110</groupId>
-			  <artifactId>partner-ejb</artifactId>
-			  <version>1.0</version>
-			  <type>ejb</type>
-		</dependency>
-		<dependency>
-			  <groupId>br.inatel.dm110</groupId>
-			  <artifactId>partner-app-client</artifactId>
-			  <version>1.0</version>
-			  <type>jar</type>
-		</dependency>
-		<dependency>
-			  <groupId>br.inatel.dm110</groupId>
-			  <artifactId>partner-api</artifactId>
-			  <version>1.0</version>
-			  <type>jar</type>
-		</dependency>
-		<dependency>
-			  <groupId>br.inatel.dm110</groupId>
-			  <artifactId>partner-impl</artifactId>
-			  <version>1.0</version>
-			  <type>jar</type>
-		</dependency>
+    	
+			<dependency>
+					<groupId>br.inatel.dm110</groupId>
+					<artifactId>partner-mdb</artifactId>
+					<version>1.0</version>
+					<type>ejb</type>
+			</dependency>
+			
+			<dependency>
+					<groupId>br.inatel.dm110</groupId>
+					<artifactId>partner-web</artifactId>
+					<version>1.0</version>
+					<type>war</type>
+			</dependency>
 
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.5.2</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly</groupId>
-			<artifactId>wildfly-ejb-client-bom</artifactId>
-			<version>24.0.1.Final</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>2.25.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>2.25.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>8.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
+			<dependency>
+					<groupId>br.inatel.dm110</groupId>
+					<artifactId>partner-ejb</artifactId>
+					<version>1.0</version>
+					<type>ejb</type>
+			</dependency>
+
+			<dependency>
+					<groupId>br.inatel.dm110</groupId>
+					<artifactId>partner-app-client</artifactId>
+					<version>1.0</version>
+					<type>jar</type>
+			</dependency>
+
+			<dependency>
+					<groupId>br.inatel.dm110</groupId>
+					<artifactId>partner-api</artifactId>
+					<version>1.0</version>
+					<type>jar</type>
+			</dependency>
+
+			<dependency>
+					<groupId>br.inatel.dm110</groupId>
+					<artifactId>partner-impl</artifactId>
+					<version>1.0</version>
+					<type>jar</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-jms-client-bom</artifactId>
+				<version>24.0.1.Final</version>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.modelmapper</groupId>
+				<artifactId>modelmapper</artifactId>
+				<version>2.4.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hsqldb</groupId>
+				<artifactId>hsqldb</artifactId>
+				<version>2.5.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-ejb-client-bom</artifactId>
+				<version>24.0.1.Final</version>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.media</groupId>
+				<artifactId>jersey-media-json-jackson</artifactId>
+				<version>2.25.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.core</groupId>
+				<artifactId>jersey-client</artifactId>
+				<version>2.25.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>8.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+				<scope>provided</scope>
+			</dependency>
+
     </dependencies>
   </dependencyManagement>
 

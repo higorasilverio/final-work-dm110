@@ -11,6 +11,24 @@ public class PartnerTO implements Serializable {
 	private String phone;
 	private String email;
 	private Integer rating;
+
+	public PartnerTO() {
+
+	}
+
+	public PartnerTO(
+		Integer partnerCode, 
+		String name, 
+		String phone, 
+		String email, 
+		Integer rating
+	) {
+		this.partnerCode = partnerCode;
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.rating = rating;
+	}
 	
 	public Integer getPartnerCode() {
 		return partnerCode;
@@ -27,6 +45,7 @@ public class PartnerTO implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getPhone() {
 		return phone;
 	}

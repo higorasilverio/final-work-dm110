@@ -6,7 +6,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import br.inatel.dm110.impl.partner.PartnerServiceImpl;
+import br.inatel.dm110.impl.PartnerServiceImpl;
 
 @ApplicationPath("/api")
 public class RestApplication extends Application {

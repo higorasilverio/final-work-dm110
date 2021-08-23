@@ -8,7 +8,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import br.inatel.dm110.api.partner.PartnerTO;
-import br.inatel.dm110.interfaces.partner.PartnerLocal;
+import br.inatel.dm110.interfaces.partner.PartnerRemote;
 
 public class PartnerEJBClient {
 
@@ -18,7 +18,7 @@ public class PartnerEJBClient {
 
 	private static void invokeStatelessBean() throws NamingException {
 
-		final PartnerLocal statelessPartner = lookupStatelessPartner();
+		final PartnerRemote statelessPartner = lookupStatelessPartner();
 		if (statelessPartner != null) {
 			List<PartnerTO> partnerList = statelessPartner.listAllPartners();
 			System.out.println(
@@ -30,12 +30,12 @@ public class PartnerEJBClient {
 		}
 	}
 
-	private static PartnerLocal lookupStatelessPartner() 
+	private static PartnerRemote lookupStatelessPartner() 
 			throws NamingException {
-		String appName = "dm110-ear-1.0";
-		String moduleName = "dm110-ejb-1.0";
+		String appName = "partner-ear-1.0";
+		String moduleName = "partner-ejb-1.0";
 		String beanName = "PartnerBean";
-		String interfaceName = PartnerLocal.class.getName();
+		String interfaceName = PartnerRemote.class.getName();
 		
 		String jndiName = 
 				"ejb:" + appName + "/" + moduleName + "/" 
@@ -43,7 +43,7 @@ public class PartnerEJBClient {
 		System.out.println("JNDI Name: " + jndiName);
 		
 		Context context = createInitialContext();
-		return (PartnerLocal) context.lookup(jndiName);
+		return (PartnerRemote) context.lookup(jndiName);
 	}
 
 	private static Context createInitialContext() throws NamingException {
