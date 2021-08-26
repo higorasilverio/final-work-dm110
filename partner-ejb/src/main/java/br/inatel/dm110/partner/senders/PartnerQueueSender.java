@@ -21,7 +21,9 @@ public class PartnerQueueSender {
 	@Resource(lookup = "java:/jms/queue/dm110queue")
 	private Queue queue;
 	
-	private static Logger log = Logger.getLogger(PartnerQueueSender.class.getName());
+	private static Logger log = Logger.getLogger(
+			PartnerQueueSender.class.getName()
+	);
 
 	public void sendTextMessage(String text) {
 		try {

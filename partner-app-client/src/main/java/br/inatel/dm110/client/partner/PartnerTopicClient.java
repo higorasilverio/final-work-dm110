@@ -13,14 +13,21 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 public class PartnerTopicClient {
-	private static final Logger log = Logger.getLogger(PartnerTopicClient.class.getName());
+	private static final Logger log = 
+			Logger.getLogger(PartnerTopicClient.class.getName());
 
-	private static final String INITIAL_CONTEXT_FACTORY = "org.wildfly.naming.client.WildFlyInitialContextFactory";
-	private static final String PROVIDER_URL = "http-remoting://127.0.0.1:8080";
-	private static final String CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
-	private static final String DESTINATION = "jms/topic/dm110topic";
-	private static final String USERNAME = "jmsuser";
-	private static final String PASSWORD = "senhajms";
+	private static final String INITIAL_CONTEXT_FACTORY = 
+			"org.wildfly.naming.client.WildFlyInitialContextFactory";
+	private static final String PROVIDER_URL = 
+			"http-remoting://127.0.0.1:8080";
+	private static final String CONNECTION_FACTORY = 
+			"jms/RemoteConnectionFactory";
+	private static final String DESTINATION = 
+			"jms/topic/dm110topic";
+	private static final String USERNAME = 
+			"jmsuser";
+	private static final String PASSWORD = 
+			"senhajms";
 
 	public static void main(String[] args) {
 		sendMessage("Olá de Topic Client.");
@@ -33,13 +40,20 @@ public class PartnerTopicClient {
 		try {
 			initialContext = getContext();
 
-			ConnectionFactory connectionFactory = (ConnectionFactory) initialContext.lookup(CONNECTION_FACTORY);
+			ConnectionFactory connectionFactory = 
+					(ConnectionFactory) initialContext
+						.lookup(CONNECTION_FACTORY);
 			System.out.println("ConnectionFactory ok");
 
-			Destination destination = (Destination) initialContext.lookup(DESTINATION);
+			Destination destination = 
+					(Destination) initialContext
+						.lookup(DESTINATION);
 			log.info("Destination ok");
 
-			try (JMSContext context = connectionFactory.createContext(USERNAME, PASSWORD)) {
+			try (
+					JMSContext context = 
+					connectionFactory.createContext(USERNAME, PASSWORD)
+			) {
 				log.info("Context ok");
 				
 				JMSProducer producer = context.createProducer();

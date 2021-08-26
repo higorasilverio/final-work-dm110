@@ -15,7 +15,7 @@ public class Partner implements Serializable {
 
 	public Partner() {
     
-  } 
+	} 
 	
 	public Partner(
 		Integer partnerCode, 
@@ -32,6 +32,7 @@ public class Partner implements Serializable {
 	}
 
 	@Id
+	@Column(name = "PARTNER_CODE")
 	private Integer partnerCode;
 
 	@Column(name = "NAME")

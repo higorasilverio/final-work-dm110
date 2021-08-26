@@ -25,7 +25,6 @@ public class PartnerBean implements PartnerLocal {
 	private static Logger log = Logger.getLogger(PartnerBean.class.getName());
 	
 	@PersistenceContext(unitName = "partner_pu")
-
 	private EntityManager em;
 	
 	@EJB
@@ -35,7 +34,9 @@ public class PartnerBean implements PartnerLocal {
 	public PartnerTO savePartner(PartnerTO partner) {
 		log.info("Save partner: " + partner.getName());
 
-		queueSender.sendTextMessage("Saving partner with partnerCode: " + partner.getPartnerCode());
+		queueSender.sendTextMessage(
+				"Saving partner with partnerCode: " + partner.getPartnerCode()
+		);
 		Partner entity = new ModelMapper().map(partner, Partner.class);
 		em.persist(entity);
 		
@@ -46,7 +47,9 @@ public class PartnerBean implements PartnerLocal {
 	public PartnerTO getPartner(Integer partnerCode) {
 		log.info("Retrieve partner: " + partnerCode);
 
-		queueSender.sendTextMessage("Retrieving partner with partnerCode: " + partnerCode);
+		queueSender.sendTextMessage(
+				"Retrieving partner with partnerCode: " + partnerCode
+		);
 		Partner entity = em.find(Partner.class, partnerCode);
 		
 		return new ModelMapper().map(entity, PartnerTO.class);
@@ -57,7 +60,8 @@ public class PartnerBean implements PartnerLocal {
 		log.info("Retrieving all partners");
 
 		queueSender.sendTextMessage("Retrieving all partners");
-		TypedQuery<Partner> query = em.createQuery("from Partner p", Partner.class);
+		TypedQuery<Partner> query = 
+				em.createQuery("from Partner p", Partner.class);
 		List<Partner> partners = query.getResultList();
 
 		return toCollectionAPIModel(partners);
@@ -65,9 +69,14 @@ public class PartnerBean implements PartnerLocal {
 
 	@Override
 	public PartnerTO updatePartner(PartnerTO partner) {
-		log.info("Updating partner with partnerCode: " + partner.getPartnerCode());
+		log.info(
+				"Updating partner with partnerCode: " + partner.getPartnerCode()
+		);
 
-		queueSender.sendTextMessage("Updating partner with partnerCode: " + partner.getPartnerCode());
+		queueSender.sendTextMessage(
+				"Updating partner with partnerCode: " 
+				+ partner.getPartnerCode()
+		);
 		Partner partnerToUpdate = new ModelMapper().map(partner, Partner.class);
 		Partner entity = em.merge(partnerToUpdate);
 

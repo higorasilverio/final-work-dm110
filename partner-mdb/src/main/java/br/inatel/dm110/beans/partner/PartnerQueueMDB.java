@@ -13,11 +13,13 @@ import javax.jms.TextMessage;
 		@ActivationConfigProperty(propertyName = "destinationType", 
 								  propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "destination", 
-								  propertyValue = "java:/jms/queue/dm110queue") })
+								  propertyValue = "java:/jms/queue/dm110queue") 
+})
 
 public class PartnerQueueMDB implements MessageListener {
 
-	private static Logger log = Logger.getLogger(PartnerQueueMDB.class.getName());
+	private static Logger log = 
+			Logger.getLogger(PartnerQueueMDB.class.getName());
 
 	@Override
 	public void onMessage(Message message) {
@@ -26,6 +28,7 @@ public class PartnerQueueMDB implements MessageListener {
 				TextMessage txtMessage = (TextMessage) message;
 				String text = txtMessage.getText();
 				log.info("Message received from queue: " + text);
+				
 			}
 		} catch (JMSException e) {
 			e.printStackTrace();

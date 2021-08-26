@@ -1,4 +1,4 @@
-package br.inatel.dm110.beans.partner;
+package br.inatel.dm110.partner.senders;
 
 import javax.ejb.Stateless;
 

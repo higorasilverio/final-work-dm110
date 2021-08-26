@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 public class PartnerServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -24118939727042992L;
-	private static Logger log = Logger.getLogger(PartnerServlet.class.getName());
+	private static Logger log = 
+			Logger.getLogger(PartnerServlet.class.getName());
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
