@@ -11,25 +11,7 @@ import javax.persistence.Table;
 @Table(name = "PARTNER", schema = "public")
 public class Partner implements Serializable {
 
-	private static final long serialVersionUID = -3226154108429480413L;
-
-	public Partner() {
-    
-	} 
-	
-	public Partner(
-		Integer partnerCode, 
-		String name, 
-		String phone, 
-		String email, 
-		Integer rating
-	) {
-		this.partnerCode = partnerCode;
-		this.name = name;
-		this.phone = phone;
-		this.email = email;
-		this.rating = rating;
-	}
+	private static final long serialVersionUID = 4397509149862936599L;
 
 	@Id
 	@Column(name = "PARTNER_CODE")
@@ -47,51 +29,67 @@ public class Partner implements Serializable {
 	@Column(name = "RATING")
 	private Integer rating;
 
+	public Partner() { }
+
+	public Partner(
+			Integer partnerCode, 
+			String name, 
+			String phone, 
+			String email, 
+			Integer rating
+	) {
+		this.partnerCode = partnerCode;
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.rating = rating;
+	}
+
 	public Integer getPartnerCode() {
 		return partnerCode;
 	}
-	
+
 	public void setPartnerCode(Integer partnerCode) {
 		this.partnerCode = partnerCode;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-  
+
 	public String getPhone() {
 		return phone;
 	}
-	
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public Integer getRating() {
 		return rating;
 	}
-	
+
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
 
 	@Override
 	public String toString() {
-		return "PartnerTO [partnerCode=" + partnerCode + ", name=" + name 
+		return "Partner [partnerCode=" + partnerCode + ", name=" + name 
 				+ ", phone=" + phone + ", email=" + email
 				+ ", rating=" + rating + "]";
-	}
+	}	
 
 }

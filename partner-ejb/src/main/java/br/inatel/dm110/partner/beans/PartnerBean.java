@@ -1,5 +1,6 @@
 package br.inatel.dm110.partner.beans;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -13,6 +14,7 @@ import javax.ejb.Stateless;
 
 import org.modelmapper.ModelMapper;
 
+import br.inatel.dm110.api.partner.AuditTO;
 import br.inatel.dm110.api.partner.PartnerTO;
 import br.inatel.dm110.interfaces.partner.PartnerLocal;
 import br.inatel.dm110.partner.senders.PartnerQueueSender;
@@ -34,8 +36,11 @@ public class PartnerBean implements PartnerLocal {
 	public PartnerTO savePartner(PartnerTO partner) {
 		log.info("Save partner: " + partner.getName());
 
-		queueSender.sendTextMessage(
-				"Saving partner with partnerCode: " + partner.getPartnerCode()
+		queueSender.sendObjectMessage(
+				new AuditTO(
+						partner.getPartnerCode(), 
+						"create",
+						LocalDateTime.now())
 		);
 		Partner entity = new ModelMapper().map(partner, Partner.class);
 		em.persist(entity);
@@ -47,8 +52,11 @@ public class PartnerBean implements PartnerLocal {
 	public PartnerTO getPartner(Integer partnerCode) {
 		log.info("Retrieve partner: " + partnerCode);
 
-		queueSender.sendTextMessage(
-				"Retrieving partner with partnerCode: " + partnerCode
+		queueSender.sendObjectMessage(
+				new AuditTO(
+						partnerCode, 
+						"read",
+						LocalDateTime.now())
 		);
 		Partner entity = em.find(Partner.class, partnerCode);
 		
@@ -59,7 +67,12 @@ public class PartnerBean implements PartnerLocal {
 	public List<PartnerTO> listAllPartners() {
 		log.info("Retrieving all partners");
 
-		queueSender.sendTextMessage("Retrieving all partners");
+		queueSender.sendObjectMessage(
+				new AuditTO(
+						null, 
+						"read",
+						LocalDateTime.now())
+		);
 		TypedQuery<Partner> query = 
 				em.createQuery("from Partner p", Partner.class);
 		List<Partner> partners = query.getResultList();
@@ -73,9 +86,11 @@ public class PartnerBean implements PartnerLocal {
 				"Updating partner with partnerCode: " + partner.getPartnerCode()
 		);
 
-		queueSender.sendTextMessage(
-				"Updating partner with partnerCode: " 
-				+ partner.getPartnerCode()
+		queueSender.sendObjectMessage(
+				new AuditTO(
+						partner.getPartnerCode(), 
+						"update",
+						LocalDateTime.now())
 		);
 		Partner partnerToUpdate = new ModelMapper().map(partner, Partner.class);
 		Partner entity = em.merge(partnerToUpdate);
