@@ -11,13 +11,11 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
-import javax.jms.TextMessage;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import br.inatel.dm110.api.partner.AuditTO;
 import br.inatel.dm110.interfaces.partner.AuditLocal;
-import br.inatel.dm110.interfaces.partner.PartnerLocal;
 
 //import br.inatel.dm110.interfaces.partner.Audit;
 
