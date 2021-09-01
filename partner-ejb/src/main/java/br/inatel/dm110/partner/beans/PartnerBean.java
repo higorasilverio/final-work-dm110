@@ -70,7 +70,7 @@ public class PartnerBean implements PartnerLocal {
 		queueSender.sendObjectMessage(
 				new AuditTO(
 						null, 
-						"read",
+						"read all",
 						LocalDateTime.now())
 		);
 		TypedQuery<Partner> query = 

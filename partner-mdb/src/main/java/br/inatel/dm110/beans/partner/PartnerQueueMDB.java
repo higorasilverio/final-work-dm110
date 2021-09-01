@@ -48,11 +48,7 @@ public class PartnerQueueMDB implements MessageListener {
 				msg = (ObjectMessage) message;
 				AuditTO audit = (AuditTO) msg.getObject();
 				log.info("Message received from queue: " + audit.getOperation());
-				if (audit.getOperation().equals("create") || 
-						audit.getOperation().equals("update")
-				) {
-					save(audit);
-				}
+				auditBean.saveRegister(audit);
 			}
 		} catch (JMSException e) {
 			e.printStackTrace();
@@ -62,7 +58,4 @@ public class PartnerQueueMDB implements MessageListener {
 		}
 	}
 	
-	public void save(AuditTO audit) {
-		auditBean.saveRegister(audit);
-	}
 }
