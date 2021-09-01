@@ -12,9 +12,7 @@ public class PartnerTO implements Serializable {
 	private String email;
 	private Integer rating;
 
-	public PartnerTO() {
-
-	}
+	public PartnerTO() { }
 
 	public PartnerTO(
 		Integer partnerCode, 
