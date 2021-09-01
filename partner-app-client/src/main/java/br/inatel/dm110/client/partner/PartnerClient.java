@@ -63,12 +63,12 @@ public class PartnerClient {
 		System.out.println("Result of all partners: " + getAllPartners());
 	}
 	
-	private static PartnerTO createPartner(PartnerTO partner01) {
+	private static PartnerTO createPartner(PartnerTO partner) {
 		return client
 				.target(REST_URI_POST)
 				.request(MediaType.APPLICATION_JSON)
-				.post(Entity.entity(partner01, MediaType.APPLICATION_JSON))
-				.readEntity(partner01.getClass());
+				.post(Entity.entity(partner, MediaType.APPLICATION_JSON))
+				.readEntity(partner.getClass());
 	}
 
 	private static PartnerTO getPartner(int partnerCode) {
@@ -79,12 +79,12 @@ public class PartnerClient {
 				.get(PartnerTO.class);
 	}
 	
-	private static PartnerTO updatePartner(PartnerTO partner00) {
+	private static PartnerTO updatePartner(PartnerTO partner) {
 		return client
 			      .target(REST_URI_GET_OR_UPDATE_ONE)
 			      .request(MediaType.APPLICATION_JSON)
-			      .put(Entity.entity(partner00, MediaType.APPLICATION_JSON))
-			      .readEntity(partner00.getClass());
+			      .put(Entity.entity(partner, MediaType.APPLICATION_JSON))
+			      .readEntity(partner.getClass());
 	}
 
 	private static List<PartnerTO> getAllPartners() {

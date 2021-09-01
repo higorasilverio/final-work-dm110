@@ -77,7 +77,7 @@ public class PartnerBean implements PartnerLocal {
 				em.createQuery("from Partner p", Partner.class);
 		List<Partner> partners = query.getResultList();
 
-		return toCollectionAPIModel(partners);
+		return toCollection(partners);
 	}
 
 	@Override
@@ -98,7 +98,7 @@ public class PartnerBean implements PartnerLocal {
 		return new ModelMapper().map(entity, PartnerTO.class);
 	}
 
-	private List<PartnerTO> toCollectionAPIModel(List<Partner> partnerList) {
+	private List<PartnerTO> toCollection(List<Partner> partnerList) {
 		return partnerList.stream().map(partner -> {
 			PartnerTO partnerTO = new PartnerTO();
 			partnerTO.setPartnerCode(partner.getPartnerCode());
