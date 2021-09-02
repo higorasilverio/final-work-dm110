@@ -3,7 +3,6 @@ package br.inatel.dm110.api.partner;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -19,7 +18,7 @@ public interface PartnerService {
 	@Path("/new")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public PartnerTO savePartner(@FormParam("partner") PartnerTO partner);
+	public PartnerTO savePartner(PartnerTO partner);
 
 	@GET
 	@Path("/partner/{partner-code}")
@@ -35,6 +34,6 @@ public interface PartnerService {
 	@Path("/partner")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public PartnerTO updatePartner(@FormParam("partner") PartnerTO partner);
+	public PartnerTO updatePartner(PartnerTO partner);
 
 }
