@@ -1,4 +1,4 @@
-## Discipline Final Work: Rest API - **_Partner_**, with **_Auditing Message Service_**
+## Discipline Final Work: Rest API - **_Partner_**, with **_Auditing Message_**
 
 #### DM110 - JavaEE Development
 
